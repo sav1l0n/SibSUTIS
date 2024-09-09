@@ -13,7 +13,3 @@ echo -e "RAM total   $(free --mega| grep "Mem" | xargs | cut -d " " -f2) MB"
 echo -e "RAM used    $(free --mega| grep "Mem" | xargs | cut -d " " -f3) MB\n"
 
 echo -e "User        $(whoami)"
-echo -e "IP address  $(ip -br a show | grep UP | xargs | cut -d " " -f3)"
-echo -e "MAC address $(ip a | grep ether | tail -n 1 | xargs | cut -d " " -f3)\n"
-
-echo -e "$(df -h | grep ^/dev/ | awk '{printf "%-10s %-10s %s/%s\n", $6, $2, $3, $4}')"
